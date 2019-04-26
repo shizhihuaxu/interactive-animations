@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>css 按钮特效</title>
+    <style type="text/css">
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        background-color: #9ebabb82;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .btn {
+        position: relative;
+        z-index: 1;
+        height: 70px;
+        line-height: 40px;
+        width: 200px;
+        padding: 15px;
+        border: 1px solid #9ebabb;
+        transition: .5s .5s, color .5s, opacity .5s;
+        cursor: pointer;
+        color: #fff;
+        text-align: center;
+        background-color: transparent;
+    }
+
+    .btn::before {
+        position: absolute;
+        content: "";
+        opacity: 0;
+        z-index: -1;
+        top: -1px;
+        right: -1px;
+        bottom: -1px;
+        left: -1px;
+        transform-origin: left;
+        transition: .3s;
+        background: #84a0a0;
+    }
+
+    /* 四个角的样式 */
+    .btn .btn-corner::before,
+    .btn .btn-corner::after {
+        position: absolute;
+        content: "";
+        width: 2px;
+        height: 2px;
+        background: #84a0a0;
+        transition: 1s;
+    }
+
+    /* 四个角的位置*/
+    .btn .btn-corner-top-right::before,
+    .btn .btn-corner-top-right::after {
+        top: -1px;
+        right: -1px;
+    }
+
+    .btn .btn-corner-top-left::before,
+    .btn .btn-corner-top-left::after {
+        top: -1px;
+        left: -1px;
+    }
+
+    .btn .btn-corner-bottom-left::before,
+    .btn .btn-corner-bottom-left::after {
+        bottom: -1px;
+        left: -1px;
+    }
+
+    .btn .btn-corner-bottom-right::before,
+    .btn .btn-corner-bottom-right::after {
+        bottom: -1px;
+        right: -1px;
+    }
+
+    .btn .link-content {
+        transition: 500ms;
+        transition-delay: 500ms;
+    }
+
+    /* btn hover 时样式 */
+    .btn:hover::before {
+        transform: scalex(1);
+        transition-delay: .5s;
+        opacity: 1;
+    }
+
+    .btn:hover .btn-corner-top-right::before,
+    .btn:hover .btn-corner-top-left::before,
+    .btn:hover .btn-corner-bottom-left::before,
+    .btn:hover .btn-corner-bottom-right::before {
+        width: 100%;
+    }
+
+    .btn:hover .btn-corner-top-right::after,
+    .btn:hover .btn-corner-top-left::after,
+    .btn:hover .btn-corner-bottom-left::after,
+    .btn:hover .btn-corner-bottom-right::after {
+        height: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <div class='btn'>
+        <span class="btn-corner btn-corner-top-right"></span>
+        <span class="btn-corner btn-corner-top-left"></span>
+        <span class="link-content">Web</span>
+        <span class="btn-corner btn-corner-bottom-left"></span>
+        <span class="btn-corner btn-corner-bottom-right"></span>
+    </div>
+</body>
+
+</html>

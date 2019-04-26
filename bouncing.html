@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>小球弹动效果</title>
+    <style type="text/css">
+    /* 
+    	animation: name duration time-function delay interation-count direction;
+    */
+    .wrap {
+        bottom: 100px;
+        margin-left: -50px;
+        position: absolute;
+        width: 100px;
+        left: 50%;
+    }
+
+    /*小球和阴影基本样式*/
+    .ball,
+    .shadow {
+        position: absolute;
+        left: 0;
+        right: 0;
+        border-radius: 100%;
+        margin: auto;
+    }
+
+    /*设置小球颜色和动画*/
+    .ball {
+        height: 50px;
+        width: 50px;
+        background: linear-gradient(#e55, #b00);
+        animation: ball 300ms cubic-bezier(0.165, 0.840, 0.440, 1.000) -200ms infinite alternate;
+    }
+
+    /*阴影颜色和动画*/
+    .shadow {
+        bottom: -90px;
+        height: 25px;
+        width: 75px;
+        background: #000;
+        animation: shadow 300ms cubic-bezier(0.165, 0.840, 0.440, 1.000) -200ms infinite alternate;
+    }
+
+    /*小球动画函数 移动垂直位置*/
+    @keyframes ball {
+        0% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(-150px);
+        }
+    }
+
+    /*阴影动画函数 缩放阴影大小和改变透明度*/
+    @keyframes shadow {
+        0% {
+            opacity: 0.2;
+            transform: scale(0.75);
+        }
+
+        100% {
+            opacity: 0.05;
+            transform: scale(1);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class='wrap'>
+        <div class='shadow'></div>
+        <div class='ball'></div>
+    </div>
+</body>
+
+</html>
