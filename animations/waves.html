@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>水波纹效果</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div class='container'>
+        <svg 
+        	width="140px" 
+        	height="140px" 
+        	version="1.1" 
+        	xmlns="http://www.w3.org/2000/svg">
+            <text 
+            	text-anchor="middle" 
+            	font-size="20px" 
+            	transform="translate(70, 70)" 
+            	style="fill: #000">test</text>
+            <!-- Wave -->
+            <g transform="translate(6, 0)">
+                <path 
+                	fill="#079087" 
+                	d="M0 80 C110 80, 40 80, 120 80  A60 60 0 0 1 0 60 Z">
+                    <animate 
+                    	id="animate" 
+                    	begin="1s" 
+                    	dur="4s" 
+                    	repeatCount="indefinite" 
+                    	attributeName="d" 
+                    	attributeType="XML" 
+                    	values="
+                            M0 80 C60 40, 70 110, 120 80  A60 60 0 0 1 0 60 Z;
+                            M0 80 C110 80, 40 80, 120 80  A60 60 0 0 1 0 60 Z;
+                            M0 80 C60 40, 70 110, 120 80  A60 60 0 0 1 0 60 Z"></animate>
+                </path>
+            </g>
+            <circle 
+            	cx="70" 
+            	cy="70" 
+            	r="60" 
+            	stroke-width="10" 
+            	stroke="#2a3140" 
+            	fill="transparent"></circle>
+        </svg>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type='text/css'>
+    	* {
+    		margin: 0;
+    		padding: 0;
+    	}
+    	div {
+    		margin: 50px;
+    		position: relative;
+    		height: 200px;
+    		width: 300px;
+    		background-color: #191c26;
+    	}
+    	div::before {
+			position: absolute;
+			content: '';
+			height: 20px;
+			width: 2px;
+			background-color: #079087;
+    	}
+    	div::after {
+			position: absolute;
+			content: '';
+			height: 20px;
+			width: 2px;
+			background-color: #079087;
+    	}
+    </style>
+</head>
+
+<body>
+  	<div>
+	  	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		  	<polygon 
+		  		points="100,100 110,90 220,90 220,110 210,120 100,120"
+		  		style="fill: rgba(7,144,135,.2); stroke: #079087; stroke-width: 2"/>
+		  	<text
+		  		transform='translate(120, 110)'
+		  		font-size='18px'
+		  		style='fill: #fff'>资产数量</text>
+		</svg>
+	</div>
+</body>
+
+</html>
